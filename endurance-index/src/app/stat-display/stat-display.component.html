@@ -1,0 +1,48 @@
+<div id="container" style="width: 100%; height: 400px"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const chart = Highcharts.chart("container", {
+            chart: {
+                type: "line",
+            },
+            title: {
+                text: "Indice d'endurance",
+            },
+            xAxis: {
+                title: {
+                    text: "Temps",
+                },
+            },
+            yAxis: {
+                title: {
+                    text: "Indice d'endurance",
+                },
+            },
+            tooltip: {
+                backgroundColor: "#FCFFC5",
+                borderColor: "black",
+                borderRadius: 10,
+                borderWidth: 3,
+            },
+            series: [{
+                type: "line",
+                data: [1, 0, 4],
+            }, {
+                type: "column",
+                data: [5, 7, 3],
+            }, ],
+        });
+    });
+</script>
+<li *ngFor="let activity of activities">
+    <h2>{{ activity.name }}</h2>
+    <ul>
+        <li>Distance : {{ activity.distance }}</li>
+        <li>Fréquence cardiaque moyenne : {{ activity.average_heartrate }}</li>
+        <li>Vitesse moyenne : {{ activity.average_speed }}</li>
+        <li>Temps Total : {{ activity.moving_time }}</li>
+        <li>Dénivelé : {{ activity.total_elevation_gain }}</li>
+        <li>Indice d'endurance : {{ activity.endurance_index }}</li>
+        <li>Running Economy : {{ activity.running_economy }}</li>
+    </ul>
+</li>
